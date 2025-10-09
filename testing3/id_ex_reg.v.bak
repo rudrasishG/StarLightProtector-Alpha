@@ -1,0 +1,3 @@
+// ID/EX pipeline register 
+
+module id_ex_reg()
