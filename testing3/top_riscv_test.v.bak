@@ -1,0 +1,24 @@
+module top_riscv_test(
+    input wire clk,
+    input wire reset
+);
+    // Internal wires
+    wire [31:0] instr;
+    wire [31:0] addr;
+
+    // Simple instruction memory (ROM)
+    instr_mem imem (
+        .addr(addr),
+        .instr(instr)
+    );
+
+    // Instantiate your 5-stage RISC-V core
+    riscv_core cpu (
+        .clk(clk),
+        .reset(reset),
+        .imem_data(instr),
+        .imem_addr(addr)
+        // Other signals remain internal or defaulted
+    );
+
+endmodule

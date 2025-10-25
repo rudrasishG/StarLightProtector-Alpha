@@ -1,0 +1,15 @@
+# -------------------------------------------------
+# ModelSim simulation script
+# -------------------------------------------------
+
+# Set working library
+vlib work
+vmap work work
+
+foreach file [glob *.v] {
+    vlog $file
+}
+vsim work.top_riscv_test.v
+add wave *
+run 100ns
+view wave
