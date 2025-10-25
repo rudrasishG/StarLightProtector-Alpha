@@ -28,10 +28,11 @@ module top_riscv_test_tb;
         $monitor($time, " | rst_n=%b | PC=%h | INSTR=%h", rst_n, uut.pc_out, uut.instr_mem_data);
 
         // Run for some cycles
-        #2000;  
+        #2000;  // adjust this depending on your instruction memory depth
         $finish;
     end
 
+    // Optional waveform dump for GTKWave
     initial begin
         $dumpfile("riscv_core_tb.vcd");
         $dumpvars(0, top_riscv_test_tb);

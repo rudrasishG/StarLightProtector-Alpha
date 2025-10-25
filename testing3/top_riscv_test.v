@@ -6,14 +6,14 @@ module top_riscv_test (
     wire [31:0] pc_out;
     wire [31:0] instr_mem_data;
 
-    // Dummy data memory wires (not implemented yet)
+    // Dummy data memory wires
     wire [31:0] data_addr;
     wire [31:0] data_wdata;
     wire        data_we;
     wire        data_re;
     wire [31:0] data_rdata;
 
-    // For now, tie data memory input to zero to avoid floating signals
+    //tie data memory input to zero to avoid floating signals
     assign data_rdata = 32'b0;
 
     // -----------------------------
